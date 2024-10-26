@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= categoryName %> Menu</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <h1><%= categoryName %></h1>
+
+    <% menuItems.forEach((item)=> { %> <% if (item.rating ===5) { %>
+    <h3><%=item.name %> ⭐</h3>
+    <% } else {%>
+    <h3><%=item.name %></h3>
+    <% } %>
+
+    <div>$<%=item.price %></div>
+    <div>Rating: <%=item.rating %></div>
+    <div>Description: <%=item.details %></div>
+    <% }) %>
+  </body>
+</html>
